@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/CoreIdentity.API/bin/Debug/net8.0/CoreIdentity.API.dll",
+            "program": "${workspaceFolder}/CoreIdentity.API/bin/Debug/net9.0/CoreIdentity.API.dll",
             "args": [],
             "cwd": "${workspaceFolder}/CoreIdentity.API",
             "stopAtEntry": false,
