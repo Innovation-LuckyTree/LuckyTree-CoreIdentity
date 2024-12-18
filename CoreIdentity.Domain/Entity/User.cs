@@ -16,7 +16,7 @@ namespace CoreIdentity.Domain.Entity
         public bool MobilePrimary { get; set; } = true;
         public int Attempts { get; set; } = 0;
         public bool Locked { get; set; } = false;
-        public DateTime? LockTime { get; set; }
+        public DateTimeOffset? LockTime { get; set; }
         public Guid? CompanyId { get; set;}
 
         public virtual ICollection<TenantUser> TenantUsers { get; set; }

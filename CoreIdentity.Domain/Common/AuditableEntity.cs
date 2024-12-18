@@ -2,7 +2,7 @@ namespace CoreIdentity.Domain.Common
 {
     public class AuditableEntity
     {
-        public DateTime CreatedOn { get; set; } = DateTime.Now;
-        public DateTime? LastModifiedBy { get; set; }
+        public DateTimeOffset CreatedOn { get; set; } = DateTimeOffset.UtcNow;
+        public DateTimeOffset? LastModifiedBy { get; set; }
     }
 }

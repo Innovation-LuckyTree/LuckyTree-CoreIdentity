@@ -5,92 +5,62 @@ namespace CoreIdentity.Persistence;
 
 public static class DataSeeder
 {
-    static Guid adminUserId = Guid.NewGuid();
-    static Guid operatorUserId = Guid.NewGuid();
-    static Guid masterAgentUserId = Guid.NewGuid();
-    static Guid agentUserId = Guid.NewGuid();
-    static Guid playerUserId = Guid.NewGuid();
+    static Guid AdminUserId = Guid.NewGuid();
+    static Guid BdmUserId = Guid.NewGuid();
+    static Guid BdoUserId = Guid.NewGuid();
 
     public static IEnumerable<UserRoles> GetUserRoles()
     {
-        return new[] {
+        return [
             new UserRoles
             {
-                UserId = adminUserId,
+                UserId = AdminUserId,
                 RoleId = 1
             },
              new UserRoles
              {
-                 UserId = operatorUserId,
+                 UserId = BdmUserId,
                  RoleId = 2
              },
             new UserRoles
             {
-                UserId = masterAgentUserId,
+                UserId = BdoUserId,
                 RoleId = 3
-            },
-            new UserRoles
-            {
-
-                RoleId = 4
-            },
-            new UserRoles
-            {
-                UserId = playerUserId,
-                RoleId = 5
             }
-        };
+        ];
     }
     
     public static IEnumerable<User> GetUserList()
     {
 
-        return new[] {
+        return [
             new User
             {
-                Id = adminUserId,
+                Id = AdminUserId,
                 UserName = "juanTmadAdmin",
                 Email = "juanTmadAdmin@gmail.com",
                 MobileNumber = "09090909099",
-                Password = CreatePassword("123456789").Password,
-                PasswordSalt = CreatePassword("123456789").Salt
+                Password = CreatePassword("test@123").Password,
+                PasswordSalt = CreatePassword("test@123").Salt
             },
             new User
             {
-                Id = operatorUserId,
-                UserName = "juanTmadOperator",
-                Email = "juanTmadOperator@gmail.com",
-                MobileNumber = "09090909099",
-                Password = CreatePassword("123456789").Password,
-                PasswordSalt = CreatePassword("123456789").Salt
+                Id = BdmUserId,
+                UserName = "juanTmadBdm",
+                Email = "juanTmadBdm@gmail.com",
+                MobileNumber = "09090909199",
+                Password = CreatePassword("test@123").Password,
+                PasswordSalt = CreatePassword("test@123").Salt
             },
             new User
             {
-                Id = masterAgentUserId,
-                UserName = "juanTmadMasterAgent",
-                Email = "juanTmadMasterAgent@gmail.com",
-                MobileNumber = "09090909099",
-                Password = CreatePassword("123456789").Password,
-                PasswordSalt = CreatePassword("123456789").Salt
-            },
-            new User
-            {
-                Id = agentUserId,
-                UserName = "juanTmadAgent",
-                Email = "juanTmadAgent@gmail.com",
-                MobileNumber = "09090909099",
-                Password = CreatePassword("123456789").Password,
-                PasswordSalt = CreatePassword("123456789").Salt
-            },
-            new User
-            {
-                Id = playerUserId,
-                UserName = "juanTmadPlayer",
-                Email = "juanTmadPlayer@gmail.com",
-                MobileNumber = "09090909099",
+                Id = BdoUserId,
+                UserName = "juanTmadBdo",
+                Email = "juanTmadBdo@gmail.com",
+                MobileNumber = "09090909299",
                 Password = CreatePassword("123456789").Password,
                 PasswordSalt = CreatePassword("123456789").Salt
             }
-        };
+        ];
     }
 }

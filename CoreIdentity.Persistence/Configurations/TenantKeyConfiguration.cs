@@ -12,8 +12,7 @@ namespace CoreIdentity.Persistence.Configurations
 
             builder.HasKey(o => o.TenantKeyId);
 
-            builder.Property(o => o.TenantKeyId)
-                .HasColumnType("uniqueidentifier");
+            builder.Property(o => o.TenantKeyId);
 
             builder.Property(o => o.Key)
                 .HasMaxLength(100);

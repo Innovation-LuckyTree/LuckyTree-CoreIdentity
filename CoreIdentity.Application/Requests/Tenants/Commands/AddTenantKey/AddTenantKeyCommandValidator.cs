@@ -8,8 +8,5 @@ public class AddTenantKeyCommandValidator : AbstractValidator<AddTenantKeyComman
     {
         RuleFor(o => o.TenantId)
             .NotEmpty();
-        
-        RuleFor(o => o.ExpirationDate)
-            .GreaterThan(DateTime.Now);
     }
 }

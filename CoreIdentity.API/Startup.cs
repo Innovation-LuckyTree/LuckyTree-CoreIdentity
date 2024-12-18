@@ -70,8 +70,8 @@ public class Startup
 
         services.AddSwaggerGen(opts =>
         {
-            opts.SwaggerDoc("v1", new OpenApiInfo { Title = "CoreIdentity API", Version = "version 1.0" });
-            opts.SwaggerDoc("v2", new OpenApiInfo { Title = "CoreIdentity API", Version = "version 2.0" });
+            opts.SwaggerDoc("v1", new OpenApiInfo { Title = "Badger CoreIdentity API", Version = "version 1.0" });
+            opts.SwaggerDoc("v2", new OpenApiInfo { Title = "Badger CoreIdentity API", Version = "version 2.0" });
 
             //opts.OperationFilter<FileUploadOperation>();
             //opts.OperationFilter<OptionalRouteParameterOperationFilter>();

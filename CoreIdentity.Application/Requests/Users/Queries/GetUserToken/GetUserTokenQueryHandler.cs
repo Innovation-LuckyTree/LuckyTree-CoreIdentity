@@ -43,7 +43,7 @@ public class GetUserTokenQueryHandler : IRequestHandler<GetUserTokenQuery, UserT
 
         if (user.Locked)
         {
-            var stillLocked = user.LockTime.Value.AddMinutes(_appConfig.LockTimeMinutes) > DateTime.Now;
+            var stillLocked = user.LockTime.Value.AddMinutes(_appConfig.LockTimeMinutes) > DateTimeOffset.UtcNow;
 
             if (stillLocked)
             {

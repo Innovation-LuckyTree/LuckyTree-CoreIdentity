@@ -31,8 +31,8 @@ public class CreateUserDeviceTokenCommandHandler : IRequestHandler<CreateUserDev
             UserId = user.Id,
             Key = keyHash.Password,
             Salt = keyHash.Salt,
-            StartDate = DateTime.Now,
-            ExpirationDate = DateTime.Now.AddDays(360),
+            StartDate = DateTimeOffset.UtcNow,
+            ExpirationDate = DateTimeOffset.UtcNow.AddDays(360),
             DeviceName = request.DeviceName,
             DeviceModel = request.DeviceModel
         };

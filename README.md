@@ -1,6 +1,6 @@
 
-UAT
-docker build -t registry.gitlab.com/happyplay/happy-play/uat-happy-play-identity:v1.0.0 .
+DEV
+docker build -t registry.gitlab.com/bit.256/happyplay/badger-core-identity:v1.0.0 .
 
 
 PROD

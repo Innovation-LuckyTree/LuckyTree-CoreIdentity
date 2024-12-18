@@ -8,8 +8,8 @@ public class UserDeviceToken : AuditableEntity
     public Guid UserId { get; set; }
     public string Key { get; set; }
     public string Salt { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime ExpirationDate { get; set; }
+    public DateTimeOffset StartDate { get; set; }
+    public DateTimeOffset ExpirationDate { get; set; }
     public string DeviceName { get; set; }
     public string DeviceModel { get; set; }
 

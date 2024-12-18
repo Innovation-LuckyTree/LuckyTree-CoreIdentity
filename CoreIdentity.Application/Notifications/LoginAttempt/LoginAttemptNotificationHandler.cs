@@ -27,7 +27,7 @@ public class LoginAttemptNotificationHandler : INotificationHandler<LoginAttempt
         if (attempts >= _maxAttempts)
         {
             user.Locked = true;
-            user.LockTime = DateTime.Now;
+            user.LockTime = DateTimeOffset.UtcNow;
         }
 
         user.Attempts = attempts;
