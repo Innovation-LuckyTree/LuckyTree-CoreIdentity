@@ -2,6 +2,7 @@ using CoreIdentity.Application.Requests.Users.Commands;
 using CoreIdentity.Application.Requests.Users.Commands.AddUserRole;
 using CoreIdentity.Application.Requests.Users.Commands.ResetUserPassword;
 using CoreIdentity.Application.Requests.Users.Commands.UnlockUserAccount;
+using CoreIdentity.Application.Requests.Users.Queries.GetLastActivity;
 using CoreIdentity.Application.Requests.Users.Queries.GetLockedUserByUserId;
 using CoreIdentity.Application.Requests.Users.Queries.GetLockedUsers;
 using CoreIdentity.Application.Requests.Users.Queries.Getusers;
@@ -152,5 +153,16 @@ public class UsersController : ApiBaseController
         var response = await Mediator.Send(request, cancellationToken);
 
         return Ok(response);
+    }
+
+    /// <summary>
+    /// Get user last activity
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("last-activity/{UserId}")]
+    public async Task<IActionResult> GetLastActivity(Guid UserId, CancellationToken cancellationToken)
+    {
+        var result = await Mediator.Send(new GetLastActivityQuery(UserId), cancellationToken);
+        return Ok(result);
     }
 }    
