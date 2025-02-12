@@ -101,7 +101,7 @@ public class Startup
         services.AddMemoryCache();
     }
 
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         // Shows UseCors with CorsPolicyBuilder.
         app.UseCors(builder =>
@@ -125,9 +125,18 @@ public class Startup
 
         app.UseAuthentication();
 
+        //app.UseHttpsRedirection();
+
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
         });
+
+        using (var scope = app.ApplicationServices.CreateScope())
+        {
+            var services = scope.ServiceProvider;
+            var context = services.GetRequiredService<CoreIdentityDbContext>();
+            await DbSeeder.SeedAsync(context);
+        }
     }
 }
