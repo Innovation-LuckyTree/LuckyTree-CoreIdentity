@@ -49,7 +49,7 @@ public class UsersController : ApiBaseController
     /// <param name="request"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
-    [HttpPost]
+    [HttpPatch("info/update")]
     public async Task<IActionResult> Post([FromBody]UpdateUserInfoCommand request, CancellationToken cancellationToken)
     {
         var response = await Mediator.Send(request, cancellationToken);

@@ -18,6 +18,7 @@ public class UpdateUserInfoCommandHandler : IRequestHandler<UpdateUserInfoComman
 
         user.Email = request.Email;
         user.MobileNumber = request.MobileNumber;
+        user.UserName = request.MobileNumber;
 
         await _dbContext.SaveChangesAsync(cancellationToken);
         return Unit.Value;
