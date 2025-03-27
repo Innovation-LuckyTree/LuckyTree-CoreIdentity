@@ -34,8 +34,8 @@ public class AddTenantKeyCommandHandler : IRequestHandler<AddTenantKeyCommand, T
             TenantId = request.TenantId,
             Key = keyHash.Password,
             Salt = keyHash.Salt,
-            StartDate = request.StartDate,
-            ExpirationDate = request.ExpirationDate
+            StartDate = request.StartDate.ToUniversalTime(),
+            ExpirationDate = request.ExpirationDate.ToUniversalTime()
         };
 
         _dbContext.TenantKeys.Add(tenantKey);
